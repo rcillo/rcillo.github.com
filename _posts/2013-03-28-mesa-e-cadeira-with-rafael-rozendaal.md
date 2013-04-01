@@ -13,7 +13,7 @@ tags: []
   </blockquote>
 </aside>
 
-That's what [Rafael Rozendaal](http://www.newrafael.com), the leader of the 8th edition of workshop [Mesa & Cadeira](http://www.mesaecadeira.org/en/), challenged us to do.
+That's what [Rafael Rozendaal](http://www.newrafael.com), leader of the 8th edition of [Mesa & Cadeira](http://www.mesaecadeira.org/en/) workshop, challenged us to do.
 
 
 What the fuck! I haven't felt that way since I first read [Macunaíma](http://en.wikipedia.org/wiki/Macuna%C3%ADma_%28novel%29).
@@ -53,7 +53,7 @@ Next day two winning ideas were chosen by voting. That's when the [iwannabealone
 
 ### The inception
 
-Exploring the idea of composition for different screen sizes, we decided that we would build a website where each new user arrival would change website's appearance to reflect the number of watchers.
+Exploring the idea of composition for different screen sizes, we decided that we would build a website where each user arrival would change website's appearance to reflect the number of watchers.
 
 <figure>
   <img src="/images/idea.png" alt="First idea sketch">
@@ -71,7 +71,7 @@ That's very raw. From that we jumped to something more visually interesting, lik
   </figcaption>
 </figure>
 
-But it is still just one way of splitting the screen into N parts. _It looked ok by the moment. Soon we would discover it was not._
+But it is still just one way of splitting the screen into N parts. It looked **ok** by the moment. Soon we would discover it was **not**.
 
 ### Adding interaction
 
@@ -79,7 +79,7 @@ Then we decided to add some hot sauce. Following Rafael's [Finger Battle](http:/
 
 That required the game to have some sort of click/tap interaction, what leads to a whole new number of problems to be solved.
 
-### Problems (or what we thought they were)
+### Problems (or we thought they were)
 
 * how to split the screen into N, from 1 to 20? How does it looks like when we have 2? And 3? And 4, 5, 6… How does the transition looks like?
 
