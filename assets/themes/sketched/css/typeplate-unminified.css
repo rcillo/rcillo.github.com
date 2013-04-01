@@ -354,7 +354,7 @@ h6 {
  */
 .pull-quote {
 	position: relative;
-	padding: 1em;
+	/*padding: 1em;*/
 }
 .pull-quote:before,
 .pull-quote:after {
