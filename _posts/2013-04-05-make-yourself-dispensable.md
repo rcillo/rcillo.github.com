@@ -1,0 +1,141 @@
+---
+layout: post
+title: "Make yourself dispensable"
+description: ""
+category: 
+tags: []
+---
+{% include JB/setup %}
+
+This is a retrospective of a year and half working for [Airu](http://www.airu.com.br/), a marketplace startup. It express my personal point of view about how it feels to be in a fast pace evolving company. My objective is to reflect and share the experience of why and how I made myself dispensable.
+
+### Why I've chosen to work there
+
+Having studied computer science, I've got myself immersed in the startup culture mith, watching guys build their empires with only their programming skills and a great idea.
+
+So, I moved to Airu looking for a place where I could pratice some [Lean Startup](http://theleanstartup.com/) ideas.
+
+<figure>
+  <img width="75%" src="/images/do_it.png" alt="Do It">
+  <figcaption>
+    That's it.
+  </figcaption>
+</figure>
+
+### Creating a development culture
+
+I was hired as a Java developer. I started working on a room with lots of noisy people, assembled my own chair, setup my programming environment on a temporary pc. Messy but functional. That's what I was looking for.
+
+As a developer I was supposed to deliver features. The quality standard wasn't very clear. The code had poor test coverage, the few existent were broken or very badly written. 
+
+With no clear quality guideline we added feature after feature, with rare refactoring moments.
+
+The result is very well known to experienced developers: high error rates, dev time drained by bug fixes, fear of breaking things, big bang deploys which sums up to compromised team speed and mood.
+
+Just to resume: stinky code, poor object oriented design, premature optimizations and no functioning tests.
+
+But the worst part: it worked. That makes it very hard to negotiate with the executives a share of the development time to make improvements to the codebase.
+
+That's when we started a very long and slow movement of educating, negotiating and implementing a technical debt payment plan which is still happening to the moment with some awesome achievements that makes me very happy. If it wasn't for the great people working there, we would never managed to get to the point we are right now: automatic deploys, live deployment, growing test coverage, redesigned caching layer, redesigned persistence layer and fewer defects. Just to name a few.
+
+The executives were very flexible. They read all the references, discussed the options and opened space to let the changes happen. The development team was very brave and took responsibility over the process. Really, really great people.
+
+### Broadening sight
+
+Delivering features with quality and speed is a limited way of improving the business. Improving development metrics doesn't imply in overall business metrics improvement. Influenced by an [article](http://xrds.acm.org/article.cfm?aid=1961679) from the XRDS magazine, about how Google managed to build efficient data centers, I started to get interested in the business as a whole.
+
+<figure>
+  <img width="75%" src="/images/hot_spot.png" alt="The hot spot">
+  <figcaption>
+    Awesome things happen when business, product and technology come together.
+  </figcaption>
+</figure>
+
+Business knowledge went as far as the product management layer. The motivation for the features wasn't very clear for the devs. This created a problem: tasks had to be extensively detailed because developers couldn't help to solve the problem because they didn't know what the problem was. They were seeing the interaction with the dev team as a client-server structure. The product manager was responsible for telling then what to do and they delivered. That created a bottleneck.
+
+That started to change when we asked for more transparency. So the CEO started to report business updates monthly so the dev team started to figure out where we were going and what we could do to help.
+
+### Becoming the PM
+
+Our product manager left the company and the responsibility was offered to me, for my previous declared interest on the business and product areas.
+
+The same night that I accepted it, I didn't slept well. Now I felt the weight of the responsibility for making the right choices and not let people waste their time developing things that would not help the company reach its objective of becoming a sustainable growing startup.
+
+There were no clear job description, differently from being a developer. With only a vague idea of what I should do, I suddenly became anxious.
+
+### The analytical framework
+
+I had no previous experience doing this kind of management job. Founding my opinions on data would make it more objective and less susceptible to subjective judgements.
+
+That reasoning led me through a path of an analytical product design opposed to a more psychological-behavioral guessing strategy.
+
+I organized my job around the following workflow:
+
+1. define key performance indicators
+2. identify the features that contribute to the indicators
+3. pick the most underperforming contributor
+4. develop an hypothesis about why it's underperforming
+5. test the hypothesis using A/B testing
+6. iterate over hypothesis until the performance has improved
+7. back to the step 1
+
+This approach helped us to **double** the conversion rate. There were lots of things to optimize.
+
+### A linear programming analogy
+
+Like a [linear programming problem](http://en.wikipedia.org/wiki/Linear_programming) there are some constraints when choosing the optimization path.
+
+<figure>
+  <img width="75%" src="/images/pl.png" alt="Linear programming analogy">
+  <figcaption>
+    Green path leads to the optimal point F on 5 steps. Red path on 5 also. But green path gets closer to F more slower at the beginning and red more slower at the end. Points are analogous to features or bug fixes. The yellow path represents a shortcut by not having to fix bugs. 
+  </figcaption>
+</figure>
+
+Relaxing the constraints allowed us to improve performance faster. The most important constraint that had been ignored is the "fix all bugs". I started to deliberately not fixing banal bugs. What a relief!
+
+Following the most increasing step may lead to a path with a higher number of iterations to reach the optimal solution.
+
+But like the simplex algorithm, decisions are half informed. You can only choose the next step (or two or three, rarely) on this framework.
+
+The hardest part is deciding what parts are underperforming (lack of benchmarks) and how much can it be improved.
+
+Changing the business strategy, changes the constraint and the optimal value. That was not my main concern, but I always asked myself if couldn't we tweak the business side to make the problem more interesting.
+
+### Dissolving the PM rule
+
+Defining a framework to drive product decisions automatized part of my job. Made it more feasible to anyone in the project with google analytics access (all the developers, at least).
+
+With a backlog full of prioritized problems, we had lots to be done.
+
+During the planning meetings I started to notice the development team had lots of ideas on how to solve the problems. Of course, they were being informed about them! That led to another part of my job being deprecated: specifications.
+
+By the end, I delegated and automated the rule of the PM. Almost completely. My main task now was to analyze and inform people. Eventually simplifying developers suggestions (sometimes they think of the best solution, which sometimes are not required, but only because they take decisions on a sprint wide timespan, not because they tend to be wrong).
+
+### A career perspective
+
+Being a developer for the last 7 years made me a reasonable good developer. Becoming a manager started a 6 month experience career branch. I would compete with guys that had 7 years of experience with management if I decided to change my job. I'm not a manager. I only wanted to make everybody efforts more valuable working smarter. I hate political relations on the workplace. The closest to the business layer you get, more political it gets.
+
+I really think that the plain old developer rule is outdated and that companies only loose making their employees alienated.
+
+But I did not wanted to change my carreer.
+
+My plan is to become awesome on what I'm already quite skilled at, and if someday I get to found my own company, I'll get back to product design and business strategy again.
+
+### Conclusion
+
+Building a smart company is hard. You need to be brave and make yourself accountable. Trusting people is always the better way to go. Working only with awesome people is the key. Making yourself dispensable is a sign that you've done your job well. Not because you were useless, but because you made things smarter by getting out of the way.
+
+### Things I would like to see
+
+I really hope my friends are going to tackle down the technical debt and post an awesome article on how they did it.
+
+I would like to see a 100% customer satisfaction rate.
+
+Would like to see the product development receiving 10x more money them the marketing.
+
+### Acknowledgments
+
+I would like to thank everyone that worked with me this last year. You are among the greatest people I've got to know in my life. It was a pleasure, besides being very [fun](http://grooveshark.com/s/Jobi+Joba/3mjOW9?src=5).
+
+Really would like to work with you again.
