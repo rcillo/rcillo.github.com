@@ -120,7 +120,7 @@ I really think that the plain old developer rule is outdated and that companies 
 
 But I did not wanted to change my carreer.
 
-My plan is to become awesome on what I'm already quite skilled at, and if someday I get to found my own company, I'll get back to product design and business strategy again.
+My plan is to become awesome, inpired by [Jiro](http://www.imdb.com/title/tt1772925/), on what I'm already quite skilled at. So I'm goint to work with the guys from [Plataformatec](http://plataformatec.com.br/).
 
 ### Conclusion
 
