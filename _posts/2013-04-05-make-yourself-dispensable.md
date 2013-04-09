@@ -7,7 +7,13 @@ tags: []
 ---
 {% include JB/setup %}
 
-Looking back a year ago I remember to have no idea that thing would come to this point. Who could imagine that I would get to feel the taste of managing just to dissolve my place after noticing that things would be better if I just let things happen. In certain ways, I just made myself dispensable and I feel great about that!
+<aside class="pull-quote">
+  <blockquote>
+    <p>No one can tell you how to do your job. You are totally accountable for it. For good and bad things. You have to take the responsability and do what you believe is right. That's when things start to happen.</p>
+  </blockquote>
+</aside>
+
+Looking back a year ago I remember to have no idea that thing would come to this point. Who could imagine that I would become a manager just to dissolve my place after noticing that it would be better if I just let things happen. In certain ways, I just made myself dispensable and I feel great about that!
 
 ### Evolving a development culture
 
@@ -34,7 +40,7 @@ But I'm sure it would be hard to tell when the crossing threshould would happen.
 
 So we started to add some basic XP practices, like unit testing, and kept applying more complicated ones <sup><a href="#fn-item2" id="fn-return2">2</a></sup> untill we gained more control over the process. But we quite didn't knew how to write tests. That's when we started doing [coding dojos](http://codingdojo.org/cgi-bin/wiki.pl?WhatIsCodingDojo).
 
-But the turning point was a talk we had about being **brave**. No one can tell how to do your job. You are totally accountable for it. For good and bad things. You have to take the responsability and do what you beleive is right. That's when things start to happen.
+But the turning point was a talk we had about being **brave**. No one can tell you how to do your job. You are totally accountable for it. For good and bad things. You have to take the responsability and do what you believe is right. That's when things start to happen.
 
 ### Broadening sight
 
@@ -51,7 +57,7 @@ Business knowledge went as far as the product management layer. The motivation f
 
 That started to change when we asked for more transparency. So the CEO started to report business updates monthly so the dev team started to figure out where we were going and what we could do to help.
 
-### Becoming the PM
+### Becoming the Product Manager (PM)
 
 Our product manager left the company and the responsibility was offered to me, for my previous declared interest on the business and product areas.
 
@@ -59,7 +65,7 @@ The same night that I accepted it, I didn't slept well. Now I felt the weight of
 
 There were no clear job description, differently from being a developer. With only a vague idea of what I should do, I suddenly became anxious.
 
-### The analytical framework
+### An analytical framework
 
 I had no previous experience doing this kind of management job. Founding my opinions on data would make it more objective and less susceptible to subjective judgements.
 
@@ -76,6 +82,8 @@ I organized my job around the following workflow:
 7. back to the step 1
 
 This approach helped us to **double** the conversion rate. There were lots of things to optimize.
+
+I really believe it does not compromises innovation nor makes the product feels dried by reasoning. There is a myth about product design where it's believed that some people have a kind of accute sense for what should be built or not. I think that Apple used Steve Jobs to build the brand and this idea is the product of this campaign. Think about that... 
 
 ### A linear programming analogy
 
