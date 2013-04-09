@@ -7,24 +7,13 @@ tags: []
 ---
 {% include JB/setup %}
 
-This is a retrospective of a year and half working for [Airu](http://www.airu.com.br/), a marketplace startup. It express my personal point of view about how it feels to be in a fast pace evolving company. My objective is to reflect and share the experience of why and how I made myself dispensable.
-
-### Why I've chosen to work there
-
-Having studied computer science, I've got myself immersed in the startup culture mith, watching guys build their empires with only their programming skills and a great idea.
-
-So, I moved to Airu looking for a place where I could pratice some [Lean Startup](http://theleanstartup.com/) ideas.
-
-<figure>
-  <img width="75%" src="/images/do_it.png" alt="Do It">
-  <figcaption>
-    That's it.
-  </figcaption>
-</figure>
+Looking back a year ago I remember to have no idea that thing would come to this point. Who could imagine that I would get to feel the taste of managing just to dissolve my place after noticing that things would be better if I just let things happen. In certain ways, I just made myself dispensable and I feel great about that!
 
 ### Creating a development culture
 
-I was hired as a Java developer. I started working on a room with lots of noisy people, assembled my own chair, setup my programming environment on a temporary pc. Messy but functional. That's what I was looking for.
+By january 2012 I was hired, as a developer, by [Airu](http://www.airu.com.br/), a marketplace startup, based in São Paulo.
+
+What a chaos I found there! I started working on a room with lots of noisy people, by the side of a bathroom door, assembled my own chair and setup my programming environment on a temporary pc. Messy but functional. That's what I was looking for.
 
 As a developer I was supposed to deliver features. The quality standard wasn't very clear. The code had poor test coverage, the few existent were broken or very badly written. 
 
