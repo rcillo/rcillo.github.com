@@ -9,25 +9,32 @@ tags: []
 
 Looking back a year ago I remember to have no idea that thing would come to this point. Who could imagine that I would get to feel the taste of managing just to dissolve my place after noticing that things would be better if I just let things happen. In certain ways, I just made myself dispensable and I feel great about that!
 
-### Creating a development culture
+### Evolving a development culture
 
 By january 2012 I was hired, as a developer, by [Airu](http://www.airu.com.br/), a marketplace startup, based in São Paulo.
 
-What a chaos I found there! I started working on a room with lots of noisy people, by the side of a bathroom door, assembled my own chair and setup my programming environment on a temporary pc. Messy but functional. That's what I was looking for.
+What a chaos I found there! I started working on a noisy room, near a bathroom door, assembled my own chair and setup my programming environment on a temporary pc. Messy but functional. That's what I was looking for.
 
-As a developer I was supposed to deliver features. The quality standard wasn't very clear. The code had poor test coverage, the few existent were broken or very badly written. 
+But like everything else, the code looked just the same.
 
-With no clear quality guideline we added feature after feature, with rare refactoring moments.
+You may know where we get from there, don't you? High error rates, dev time drained by bug fixes, fear of breaking things, big bang deploys which sums up to compromised team speed and mood.
 
-The result is very well known to experienced developers: high error rates, dev time drained by bug fixes, fear of breaking things, big bang deploys which sums up to compromised team speed and mood.
+But the worst part: it worked! How are you supposed to argue with non technical executives about the importance of good practices if it isn't hurting them yet?
 
-Just to resume: stinky code, poor object oriented design, premature optimizations and no functioning tests.
+Argumentation, for sure. I've chosen mainly authority args extracted from books <sup><a href="#fn-item1" id="fn-return1">1</a></sup>. But it would had been much easier if there were some serious work on the comparison of team speed, with just a simple plot like the one bellow.
 
-But the worst part: it worked. That makes it very hard to negotiate with the executives a share of the development time to make improvements to the codebase.
+<figure>
+  <img width="75%" src="/images/productivity_vs_time.png" alt="Productivity Vs Time">
+  <figcaption>
+    Blue line represents a team adopting <a href="http://www.extremeprogramming.org/">XP</a> with some good practices. The red line a team running <a href="http://helio.loureiro.eng.br/index.php/pessoal/39-blog/240-extreme-go-horse-xgh">XGH</a>.
+  </figcaption>
+</figure>
 
-That's when we started a very long and slow movement of educating, negotiating and implementing a technical debt payment plan which is still happening to the moment with some awesome achievements that makes me very happy. If it wasn't for the great people working there, we would never managed to get to the point we are right now: automatic deploys, live deployment, growing test coverage, redesigned caching layer, redesigned persistence layer and fewer defects. Just to name a few.
+But I'm sure it would be hard to tell when the crossing threshould would happen. Startups aren't sure about their near future. They keep thinking that maybe they should run as fast as they can just to test and hypothesis and that this would happen before the threashold. But honestly, if your project is going to last for more than a month, **don't screw up**.
 
-The executives were very flexible. They read all the references, discussed the options and opened space to let the changes happen. The development team was very brave and took responsibility over the process. Really, really great people.
+So we started to add some basic XP practices, like unit testing, and kept applying more complicated ones <sup><a href="#fn-item2" id="fn-return2">2</a></sup> untill we gained more control over the process. But we quite didn't knew how to write tests. That's when we started doing [coding dojos](http://codingdojo.org/cgi-bin/wiki.pl?WhatIsCodingDojo).
+
+But the turning point was a talk we had about being **brave**. No one can tell how to do your job. You are totally accountable for it. For good and bad things. You have to take the responsability and do what you beleive is right. That's when things start to happen.
 
 ### Broadening sight
 
@@ -128,3 +135,10 @@ Would like to see the product development receiving 10x more money them the mark
 I would like to thank everyone that worked with me this last year. You are among the greatest people I've got to know in my life. It was a pleasure, besides being very [fun](http://grooveshark.com/s/Jobi+Joba/3mjOW9?src=5).
 
 Really would like to work with you again.
+
+<footer>
+  <ol class="foot-notes">
+    <li id="fn-item1">The main reference: Extreme Programming Explained: Embrace Change, 2nd Edition, by Kent Beck.<a href="#fn-return1">↩</a></li>
+    <li id="fn-item2">Automatic deploys, live deployment, refactoring, one week sprints, better communication.<a href="#fn-return2">↩</a></li>
+  </ol>
+</footer>

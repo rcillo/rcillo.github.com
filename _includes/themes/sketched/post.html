@@ -1,12 +1,14 @@
-<header>
-  <h1 class="delta section-title">
-    {{ page.title }}
-  </h1>
-</header>
+<article>
+  <header>
+    <h1 class="delta section-title">
+      {{ page.title }}
+    </h1>
+  </header>
 
-<div class="date">
-  <span>{{ page.date | date_to_long_string }}</strong>
-</div>
-<div class="content">
-  {{ content }}
-</div>
+  <div class="date">
+    <span>{{ page.date | date_to_long_string }}</strong>
+  </div>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
