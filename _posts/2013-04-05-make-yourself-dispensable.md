@@ -136,6 +136,8 @@ I would like to thank everyone that worked with me this last year. You are among
 
 Really would like to work with you again.
 
+### Notes
+
 <footer>
   <ol class="foot-notes">
     <li id="fn-item1">The main reference: Extreme Programming Explained: Embrace Change, 2nd Edition, by Kent Beck.<a href="#fn-return1">↩</a></li>
