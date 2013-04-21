@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Mesa e Cadeira with Rafael Rozendaal"
 description: "So you think you can do it?"
 category: 

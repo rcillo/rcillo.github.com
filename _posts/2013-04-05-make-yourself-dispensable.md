@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Make yourself dispensable"
 description: ""
 category: 
