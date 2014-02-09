@@ -8,11 +8,6 @@ tags: []
 ---
 {% include JB/setup %}
 
-<aside class="pull-quote">
-  <blockquote>
-    <p>No one can tell you how to do your job. You are totally accountable for it. For good and bad things. You have to take the responsability and do what you believe is right. That's when things start to happen.</p>
-  </blockquote>
-</aside>
 
 This post presents an investigation over implementations of the [memoization](http://en.wikipedia.org/wiki/Memoization) technique in the context of functional programming.
 
