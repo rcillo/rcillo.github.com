@@ -54,6 +54,7 @@ figure img {
   color: gray;
 }
 
-h3 {
-  padding-top: 2em;
+h2 {
+  font-size: 2em;
+  padding-top: 1em;
 }
