@@ -11,7 +11,7 @@ tags: []
 
 This post presents an investigation over implementations of the [memoization](http://en.wikipedia.org/wiki/Memoization) technique in the context of functional programming.
 
-Besides being straighforward and broadly used by programmer of imperative languages, implementing memoization in a functional programming language was a non obvious task and presented lots of opportunities to learning some theory and running some experiments, which I compiled in this post.
+Besides being straightforward and broadly used by programmer of imperative languages, implementing memoization in a functional programming language was a non obvious task and presented lots of opportunities to learning some theory and running some experiments, which I compiled in this post.
 
 Regardless the choice of language, [Elixir](http://elixir-lang.org/), the results may be useful for other functional languages as well.
 
@@ -147,7 +147,7 @@ As we can see, its pretty fast.
 <figure>
   <img width="100%" src="/images/memoized-fibonacci.png" alt="Memoized fibonacci with linear growth curve">
   <figcaption>
-    The memoized version is faster than the cached version. Thats because the ets is has constant (xxx) access lookup time and dictionaries have logarithm (xxx) time.
+    The memoized version is faster than the cached version. Thats because the ets is has constant access lookup time and dictionaries have logarithm time.
   </figcaption>
 </figure>
 
