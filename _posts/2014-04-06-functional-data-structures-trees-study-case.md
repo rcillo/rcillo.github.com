@@ -35,15 +35,13 @@ Back in college time, most students learned algorithms and data structures in la
 
 But the history has changed after I started reading Chris Okazaki book <sup><a href="#fn-item1" id="fn-return1">1</a></sup> on purely functional data structures. Funcional languages like Haskell and Elixir allow for clearer implementations. In fact, I’m so excited about it, that I wrote this essay.
 
-The old ideas are still the same, but the language features are different, which imposes a new challenge. A delightful one.
-
-Some may say that “C is faster” and I agree with that. But wasn’t compiling a waste of computing time? All that we need are binary instructions, isn’t it? I share [Bret Victor opinion](http://vimeo.com/71278954) regarding this subject.
+The old ideas are still the same, but in functional languages we have to work with immutability, a core feature that may looks like limitating at first sight, but offers quite a lot of benefits, as we will see.
 
 ## Persistence and sharing: immutability’s twins
 
 Suppose we need to update a value in an array, we just go straight ahead and <pre style="text-align:center;">array[i] = value</pre> update the array at the index position (usually `i`, `j`, `k` or all of the alphabet letters together).
 
-We don’t have that in functional languages. Nor the random access nor the “destructive” updates. We have lists and `cons`. This is how an equivalent implementation, a dummy one, would looks like in Elixir:
+We don’t have in memory updates in functional languages. We have lists and `cons`. This is how an equivalent implementation, a dummy one, would looks like in Elixir:
 
 <figure>
   <img width="100%" src="/images/trees/list-update.png" alt="Lists sharing">
@@ -144,9 +142,19 @@ Serious performance analysis are hard to do. Some articles claim that synthetic 
    </figcaption>
 </figure>
 
+Some may say that “C is faster” and I agree with that. But wasn’t compiling a waste of computing time? All that we need are binary instructions, isn’t it? I share [Bret Victor opinion](http://vimeo.com/71278954) regarding this subject.
+
 ## Conclusion
 
-Relearning things from college in a new setup is a joyful experience. Even the shameful defeat for Erlang trees. I learned something: being paranoid about balancing is a bad choice. Generally balanced trees are more relaxed and only run balancing operations where and when needed. That’s not a matter of hard work. Thats about doing the right work in the right time. Thats a good analogy to life.
+Relearning things from college in a new setup is a joyful experience. Even the shameful defeat for Erlang trees.
+
+Besides been easier to think about functional code, in parts due to immutability, there are other features we gain for free:
+
+1. Immutability makes concurrency and parallelism much easier (which actually makes it faster when you have multi cores).
+
+2. Immutability is a language abstraction. Many languages, including Elixir and Haskell, compiles immutable code to mutable code if the compiler can guarantee there won't be any impact on the concurrent / parallelism side.
+
+Also, being paranoid about balancing is a bad choice. Generally balanced trees are more relaxed and only run balancing operations where and when needed. That’s not a matter of hard work. Thats about doing the right work in the right time. Thats a good analogy to life.
 
 ## Next steps
 
