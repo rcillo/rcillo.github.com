@@ -1,0 +1,210 @@
+---
+layout: post
+title: "Getting Started"
+description: ""
+category:
+tags: []
+---
+{% include JB/setup %}
+
+## 2.1 Insertion sort
+
+### 2.1-1
+
+Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the
+array $A = \langle 31, 41, 59, 26, 41, 58 \rangle$.
+
+<hr>
+
+<figure>
+  <img width="100%" src="/images/clrs/ch2/exercise-2_1-1-insertion-sort-diagram.png" alt="Insertion sorte operations illustrated">
+</figure>
+
+### 2.1-2
+
+Rewrite the INSERTION-SORT procedure to sorte into nonincreasing instead of
+nondecreasing order.
+
+<hr>
+
+<div class="code">
+INSERTION-SORT($A$)<br>
+1&emsp;<b>for</b> $j \leftarrow 2$ to $length[A]$<br>
+2&emsp;&emsp;<b>do</b> $key \leftarrow A[j]$<br>
+3&emsp;&emsp;&emsp;$\rhd$ Insert $A[j]$ into the sorted sequence $A[1..j - 1]$.<br>
+4&emsp;&emsp;&emsp;$i \leftarrow j - 1$<br>
+5&emsp;&emsp;&emsp;<b>while</b> $i > 0$ and $A[i] < key$<br>
+6&emsp;&emsp;&emsp;&emsp;<b>do</b> $A[i + 1] \leftarrow A[i]$<br>
+7&emsp;&emsp;&emsp;&emsp;&emsp;$i \leftarrow i - 1$<br>
+8&emsp;&emsp;&emsp;$A[i + 1] \leftarrow key$<br>
+</div>
+
+The only difference is in line 5 where the comparison $A[i] > key$ has been replaced
+by $A[i] < key$.
+
+### 2.1-3
+
+Consider the **searching problem**:
+
+**Input:** A sequence of $n$ numbers $A = \langle a_1, a_2, ..., a_n \rangle$ and a value $v$.
+
+**Output:** An index i such that $v = A[i]$ or the special value $NIL$ if $v$ does
+not appear in $A$.
+
+Write pseudocode for **linear search**, which scans through the sequence, looking
+for $v$, Using a loop invariant, prove that your algorithm is correct. Make sure
+that your loop invariant fulfills the three necessary properties.
+
+<hr>
+
+<div class="code">
+LINEAR-SEARCH($A$, $v$)<br>
+1&emsp;$j \leftarrow 1$<br>
+2&emsp;$i \leftarrow NIL$<br>
+3&emsp;<b>while</b> $j \leq length(A)$<br>
+4&emsp;&emsp;<b>do if</b> $A[j] = v$<br>
+5&emsp;&emsp;&emsp;&emsp;<b>then</b> $i \leftarrow j$<br>
+6&emsp;&emsp;&emsp;$j \leftarrow j + 1$<br>
+7&emsp;<b>return</b> $i$<br>
+</div>
+
+<br>
+
+#### Proof of correctness of LINEAR-SEARCH
+
+**Invariant:** At the beginning of each iteration of the loop at line 3, $i$ contains
+the index where $v$ appears in the subarray $A[1 .. j - 1]$ or $NIL$ if it was not found.
+
+**Initialization:** Before the first iteration $j = 1$, so the subarray $A[1 .. j - 1]$
+is the empty array. Since $i = NIL$, we have that $v$ does appear in the empty array,
+which is obviously true.
+
+**Maintenance:** The loop scans the array from left to right checking at every
+index $j$ if $v$ appears at that position. When that happens, we assign $j$ to $i$
+at line 5, so that at the beginning of the next iteration, $i$ may contain the index
+of the last occurrence of $v$ or $NIL$ if it did not appear in the subarray $A[i .. j -1]$.
+
+**Termination:** By the end of the loop, $j = length(A) + 1$, so replacing this in the
+invariant expression, we have that $i$ is the index of the last occurrence of $v$
+in the subarray $A[1 .. length(A)] = A$ or $NIL$ if it was not found. $\blacksquare$
+
+### 2.1-4
+
+Consider the problem of adding two $n$-bit binary integers, stored in two $n$-element
+arrays $A$ and $B$. The sum of the two integers should be stored in binary form in
+an $(n + 1)$-element array $C$. State the problem formally and write pseudocode for
+adding the two integers.
+
+<hr>
+
+**Input:** Two $n$-element arrays $A = \langle a_1, a_2, ..., a_n \rangle$ and
+$B = \langle b_1, b_2, ..., b_n \rangle$, with $a_i, b_i \in \lbrace 0, 1 \rbrace$, representing
+two binary integers $a = a_n \times 2^{n-1} + a_ {n-1} \times 2^{n-2} + \dots + a_1 \times 2^0$
+and $b = b_n \times 2^{n-1} + b_ {n-1} \times 2^{n-2} + \dots + b_1 \times 2^0$ respectively.
+
+**Output:** An $(n+1)$-element array $C = \langle c_1, c_2, ..., c_ {n + 1} \rangle$
+representing the number $c = a + b$.
+
+#### Full adder circuit solution
+
+The algorithm bellow uses what is know as the full adder circuit for adding bits.
+It takes as input three bits $a_i, b_i$ and $c'$ (also know as carry) and calculates
+the $c_i$ (sum) and the $c''$ (carry-out).
+
+<figure>
+  <img width="100%" src="/images/clrs/ch2/exercise-2_1-4-full-adder-circuit.png" alt="Full adder circuit diagram">
+  <figcaption>
+    Full adder circuit
+  </figcaption>
+</figure>
+
+<table width="50%" border="1">
+  <caption>Truth table for the full adder circuit</caption>
+  <tr>
+    <th>$a_i$</th>
+    <th>$b_i$</th>
+    <th>$c'$</th>
+    <th>$c_i$</th>
+    <th>$c''$</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<br>
+
+<div class="code">
+BINARY-SUM(A, B, C)<br>
+1&emsp;$c' \leftarrow 0$<br>
+2&emsp;<b>for</b> $i \leftarrow 1$ <b>to</b> $length(A)$<br>
+3&emsp;&emsp;<b>do</b> $d \leftarrow A[i] \oplus B[i]$<br>
+4&emsp;&emsp;&emsp;$C[i] \leftarrow d \oplus c'$<br>
+5&emsp;&emsp;&emsp;$c' \leftarrow (d \land c') \lor (A[i] \land B[i])$<br>
+6&emsp;$C[i] \leftarrow c'$<br>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
