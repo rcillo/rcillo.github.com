@@ -60,33 +60,31 @@ that your loop invariant fulfills the three necessary properties.
 <div class="code">
 LINEAR-SEARCH($A$, $v$)<br>
 1&emsp;$j \leftarrow 1$<br>
-2&emsp;$i \leftarrow NIL$<br>
-3&emsp;<b>while</b> $j \leq length(A)$<br>
-4&emsp;&emsp;<b>do if</b> $A[j] = v$<br>
-5&emsp;&emsp;&emsp;&emsp;<b>then</b> $i \leftarrow j$<br>
-6&emsp;&emsp;&emsp;$j \leftarrow j + 1$<br>
-7&emsp;<b>return</b> $i$<br>
+2&emsp;<b>while</b> $j \leq length(A)$<br>
+3&emsp;&emsp;<b>do if</b> $A[j] = v$<br>
+4&emsp;&emsp;&emsp;&emsp;<b>then return</b> $j$<br>
+5&emsp;&emsp;&emsp;$j \leftarrow j + 1$<br>
+6&emsp;<b>return</b> $NIL$<br>
 </div>
 
 <br>
 
 #### Proof of correctness of LINEAR-SEARCH
 
-**Invariant:** At the beginning of each iteration of the loop at line 3, $i$ contains
-the index where $v$ appears in the subarray $A[1 .. j - 1]$ or $NIL$ if it was not found.
+**Invariant:** At the beginning of each iteration of the loop at line 3, the subarray 
+$A[1 .. j - 1]$ does not contain $v$.
 
 **Initialization:** Before the first iteration $j = 1$, so the subarray $A[1 .. j - 1]$
-is the empty array. Since $i = NIL$, we have that $v$ does appear in the empty array,
-which is obviously true.
+is the empty array. So the invariant holds, since $v$ does appear in the empty array.
 
 **Maintenance:** The loop scans the array from left to right checking at every
-index $j$ if $v$ appears at that position. When that happens, we assign $j$ to $i$
-at line 5, so that at the beginning of the next iteration, $i$ may contain the index
-of the last occurrence of $v$ or $NIL$ if it did not appear in the subarray $A[i .. j -1]$.
+index $j$ if $v$ appears at that position (line 3). When that happens, the position
+$j$ is returned. If $v$ is not in position $j$ we have that $v$ is not in the subarray
+$A[1 .. j].
 
 **Termination:** By the end of the loop, $j = length(A) + 1$, so replacing this in the
-invariant expression, we have that $i$ is the index of the last occurrence of $v$
-in the subarray $A[1 .. length(A)] = A$ or $NIL$ if it was not found. $\blacksquare$
+invariant expression, we have that $v$ has not appeared in the subarray $A[1 .. length(A)] = A$.
+Otherwise, $v$ has been found and the algorithm terminated before the end of the loop. $\blacksquare$
 
 ### 2.1-4
 
