@@ -71,7 +71,7 @@ LINEAR-SEARCH($A$, $v$)<br>
 
 #### Proof of correctness of LINEAR-SEARCH
 
-**Invariant:** At the beginning of each iteration of the loop at line 3, the subarray 
+**Invariant:** At the beginning of each iteration of the loop at line 3, the subarray
 $A[1 .. j - 1]$ does not contain $v$.
 
 **Initialization:** Before the first iteration $j = 1$, so the subarray $A[1 .. j - 1]$
@@ -196,6 +196,181 @@ BINARY-SUM(A, B, C)<br>
 </div>
 
 
+## Exercises 2.2
+
+### 2.2-1
+
+Express the function $\frac{n^3}{1000} - 100 n^2 - 100n + 3$ in terms of $\Theta$-notation.
+
+<hr>
+
+After removing the constants and lower order terms, what's left is $\Theta (n^3)$.
+
+### 2.2-2
+
+Consider sorting $n$ numbers stored in array $A$ by first finding the smallest element
+of $A$ and exchanging it with the element in $A[1]$. Then find the second smallest
+element of $A$, and exchange it with $A[2]$. Continue in this manner for the first $n - 1$
+elements of $A$. Write pseudocode for this algorithm, which is know as *selection sort*.
+What loop invariant does this algorithm maintain? Why does it need to run for only the
+first $n - 1$ elements, rather than for all $n$ elements? Give the best-case and worst-
+case runnint times of selection sort in $\Theta$-notation.
+
+<hr>
+
+<div class="code">
+SELECTION-SORT(A)<br>
+1&emsp;<b>for</b> $i \leftarrow 1$ <b>to</b> $length[A] - 1$<br>
+2&emsp;&emsp;<b>do</b> $min \leftarrow i$<br>
+3&emsp;&emsp;&emsp;<b>for</b> $j \leftarrow i + 1$ <b>to</b> $length[A]$<br>
+4&emsp;&emsp;&emsp;&emsp;<b>do if</b> $A[j] < A[min]$<br>
+5&emsp;&emsp;&emsp;&emsp;&emsp;<b>then</b> $min \leftarrow j$<br>
+6&emsp;&emsp;&emsp;$\rhd$ swap $A[i]$ and $A[min]$<br>
+</div>
+
+<br>
+
+#### Proof of correctness
+
+Before proving the correctness of the algorithm, its convenient to prove the following.
+
+**Lemma:** the inner loop from lines $2 - 5$ finds the index of the smallest element in the
+subarray $A[i .. length[A]]$.
+
+**Invariant:** at the start of the loop at line $3$, the variable $min$ holds the index of
+the smallest element in the subarray $A[i .. j - 1]$.
+**Initialization:** it's trivial, since $min = i$ which is the index of the smallest element in
+the subarray $A[i .. (i + 1) - 1] = A[i]$.
+**Maintenance:** since $min$ is the index of the smallest element in $A[i .. j - 1]$,
+if the next element to check $A[j]$ is smaller than $A[min]$ (line 4), we may assing $j$ to
+$min$ (line 5), and $min$ would hold the index of smallest element in the subarray $A[i .. j]$.
+**Termination:** as $j$ is incremented to $length[A]$, by the end of the loop, we have
+that $min$ is the index of the smallest elment in $A[i .. length[A]]$.
+
+<br>
+
+Back to the main proof at the start of the iteration of the outer loop $1 - 6$, the
+subarray $A[1 .. i - 1]$ contains the $i$ smallest elements from $A$ in sorted order.
+
+**Initialization:** Before the first run, $i = 0$ and the the subarray $A[1 .. i - 1]$
+is the empty array which is obviously in sorted order.
+
+**Maintenace:** Given the subarray $A[1 .. i - 1]$ contains the $i - 1$ smallest elements
+from $A$ in sorted order and the inner loop in lines $2 - 5$ finds the smallest element
+remaining in the subarray $A[i .. length[A]]$, once we swap it with $A[i]$, line 6, we have
+that the subarray $A[1 .. i]$ is in sorted order and contain the smallest $i$ elements from $A$.
+
+**Termination:** After running from $i = 1$ to $lenght[A] - 1$, we have that $A[1 .. length[A] - 1]$
+is in sorted order and contain the smallest $lenght[A] - 1$ elements of $A$. So the remaining
+element $A[lenght[A]]$ is the largest element in $A$ and the array is in sorted order. $\blacksquare$
+
+<br>
+
+Thats why we do not need to check the last element of $A$. Its guaranteed to be the
+larget element of the array and will be in its final position.
+
+<br>
+
+#### Performance analysis
+
+Let $t_i$ be the number of times the check at line 3 is run for every $i$. For $i = 1$,
+$t_i = (n + 1) - (i + 1) = n - i$, e.g. from $i + 1$ to $n + 1$, since an extra check is made for
+each loop header than the body.
+
+<table class="performance">
+  <tr>
+    <td>
+      SELECTION-SORT(A)
+    </td>
+    <td>
+      $cost$
+    </td>
+    <td>
+      $times$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      1&emsp;<b>for</b> $i \leftarrow 1$ <b>to</b> $length[A] - 1$
+    </td>
+    <td>
+      $c_1$
+    </td>
+    <td>
+      $n - 1$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2&emsp;&emsp;<b>do</b> $min \leftarrow i$
+    </td>
+    <td>
+      $c_2$
+    </td>
+    <td>
+      $n - 1$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      3&emsp;&emsp;&emsp;<b>for</b> $j \leftarrow i + 1$ <b>to</b> $length[A]$
+    </td>
+    <td>
+      $c_3$
+    </td>
+    <td>
+	$\sum_{i = 1}^{n - 1}{t_i}$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      4&emsp;&emsp;&emsp;&emsp;<b>do if</b> $A[j] < A[min]$
+    </td>
+    <td>
+      $c_4$
+    </td>
+    <td>
+      $\sum_{i = 1}^{n - 1}{t_i - 1}$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      5&emsp;&emsp;&emsp;&emsp;&emsp;<b>then</b> $min \leftarrow j$
+    </td>
+    <td>
+      $c_5$
+    </td>
+    <td>
+      $t_j$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      6&emsp;&emsp;&emsp;$\rhd$ swap $A[i]$ and $A[min]$
+    </td>
+    <td>
+      $c_6$
+    </td>
+    <td>
+      $n - 1$
+    </td>
+  </tr>
+</table>
+
+The value for $t_j$ is, in the best case, zero, for when $A[min]$ is the smallest in
+$A[i .. length[A]]$. But the worst case is equal to the line 4 above it.
+
+TODO: $T(n)$, but I know it's $\Theta(n^2)$ in the best or worse case.
+
+### 2.2-4
+
+How can we modify almost any algorithm to have a best-case running time?
+
+<hr>
+
+By pre-calculating, or *caching*, the correct output for a given input. This special
+input would cost at most a linear time to calculate, time required to match the given
+input to that from the precalculated one.
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({

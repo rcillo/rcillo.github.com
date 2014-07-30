@@ -67,3 +67,7 @@ table {
 td {
   text-align: center;
 }
+
+table.performance td {
+  text-align: left;
+}
