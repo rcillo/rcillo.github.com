@@ -150,3 +150,5 @@ div.annotation_comment {
     white-space: pre-line;      /* CSS 3 (and 2.1 as well, actually) */
     word-wrap: break-word;      /* IE */
 }
+
+.code_page td { text-align: left; }
